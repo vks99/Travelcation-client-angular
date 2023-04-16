@@ -1,0 +1,48 @@
+
+  
+  .hero-header{
+    background: linear-gradient(rgba(20,30,31,0.7),rgba(20,20,31,0.7));
+    background-image: url("../../assets/DestinationImages/DestinationHeader.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .package-item{
+    box-shadow: 0 0 45px rgba(0,0,0,0.08);
+  }
+  
+  .package-item img{
+    transition:0.5s;
+  }
+  
+  .package-item:hover img{
+    transform:scale(1.1);
+  }
+  
+  .btn{
+    font-family:'Nuito', sans-serif;
+    font-weight:600;
+    transition:0.5s;
+  }
+  
+  .btn.btn-primary,
+  .btn.btn-secondary{
+    color:#ffffff;
+  }
+  
+  .btn-sqaure{
+    width:38px;
+    height:38px;
+  }
+  
+  .booking{
+    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
+    background-image: url("../../assets/DestinationImages/booking-background-image8.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .white-text {
+    color: white;
+  }

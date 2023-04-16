@@ -1,0 +1,20 @@
+<h1 class="title">Your Payment History</h1>
+
+<table class="payment-table">
+  <thead>
+    <tr>
+      <th>Last Name</th>
+      <th>City</th>
+      <th>Destination Name</th>
+      <th>Destination Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of history">
+      <td>{{ p.lastname }}</td>
+      <td>{{ p.city }}</td>
+      <td>{{ p.destinationName }}</td>
+      <td>{{ p.destinationPrice }}</td>
+    </tr>
+  </tbody>
+</table>

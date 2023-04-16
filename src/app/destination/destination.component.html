@@ -1,0 +1,252 @@
+<div>
+    <div class="container-fluid position-relative p-0">
+        <div class="container-fluid bg-success py-5 mb-5 hero-header">
+            <div class="row justify-content-center py-5">
+                <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+                    <h1 class="display-3 text-white mb-3">
+                        Enjoy Your vacation With Us
+                    </h1>
+                    <p class="f5-4 text-white mb-4">
+                        From stunning beaches to ancient ruins, our travel experts have
+                        scoured the globe to bring you the best destinations and
+                        experiences. Browse our curated selection of travel guides,
+                        itineraries, and insider tips to plan your next adventure today.
+                    </p>
+                    <div class="position-relative w-75 mx-auto">
+                        <input type="text" class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" placeholder="Eg:London" />
+                        <button type="button" class="btn btn-success rounded-pill position-absolute top-0 end-0 me-2 my-1 d-flex align-items-center" [style.height.px]="30">
+                          Search
+                        </button>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6" [style.minHeight.px]="400">
+                    <div class="overflow-hidden">
+                        <img src="assets/DestinationImages/Destination_AboutUs.jpg"
+                             class="img-fluid"
+                             style="object-fit: cover;" />
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h6 class="section-title bg-white text-start text-success pe-3">
+                        About Us
+                    </h6>
+                    <h1 class="mb-4">
+                        Welcome to<span class="text-success"> Tourist</span>
+                    </h1>
+        
+                    <p class="mb-4">
+                        We understand tourism not as a mere leisure activity but as an
+                        educational yet pleasant journey to unknown countries and
+                        cultures. We put a strong focus on bringing long-term &
+                        sustainable development to the regions we promote by working
+                        closely with local providers and using local products.
+                        <br />
+                        <br />
+                    </p>
+        
+                    <div class="row gy-2 gx-4 mb-4">
+                        <div class="col-sm-6">
+                            <p class="mb-0">
+                                <i class="fa fa-arrow-right text-success me-2"></i>First
+                                Class Flights
+                            </p>
+                            <p class="mb-0">
+                                <i class="fa fa-arrow-right text-success me-2"></i>5
+                                Star Accommodation
+                            </p>
+                            <p class="mb-0">
+                                <i class="fa fa-arrow-right text-success me-2"></i>
+                                Premium City Tours
+                            </p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0">
+                                <i class="fa fa-arrow-right text-success me-2"></i>
+                                Handpicked Hotels
+                            </p>
+                            <p class="mb-0">
+                                <i class="fa fa-arrow-right text-success me-2"></i>
+                                Latest Model Vehicles
+                            </p>
+                            <p class="mb-0">
+                                <i class="fa fa-arrow-right text-success me-2"></i>
+                                Service
+                            </p>
+                        </div>
+                    </div>
+                    <div class="btn btn-success py-3 px-5 mt-2">Read More</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container-xxl py-5">
+            <div class="container">
+              <div class="text-center">
+                <h3 class="section-title bg-white text-center text-success px-3">
+                  Packages
+                </h3>
+                <h1 class="mb-5 text-center">Awesome packages</h1>
+              </div>
+              <div class="row g-4 justify-content-center">
+                <ng-container *ngFor="let item of packages; let i = index">
+                  <div class="col-lg-4 col-md-6">
+                    <div class="package-item">
+                      <div class="overflow-hidden">
+                        <img [src]="imgurl[i]" alt="" class="img-fluid" />
+                      </div>
+              
+                      <div class="d-flex border-bottom">
+                        <small class="flex-fill text-center border-end py-2">
+                          <i class="fa fa-map-marker-alt text-success me-2"></i>
+                          {{item.name}}
+                        </small>
+                        <small class="flex-fill text-center border-end py-2">
+                          <i class="fa fa-calendar-alt text-success me-2"></i>
+                          {{item.days}} days
+                        </small>
+                        <small class="flex-fill text-center border-end py-2">
+                          <i class="fa fa-user text-success me-2"></i>
+                          {{item.no_persons}} Person
+                        </small>
+                      </div>
+                      <div class="text-center p-4">
+                        <h3 class="mb-0">${{item.price}}.00</h3>
+                        <div class="mb-3">
+                          <small class="fa fa-star text-success"></small>
+                          <small class="fa fa-star text-success"></small>
+                          <small class="fa fa-star text-success"></small>
+                          <small class="fa fa-star text-success"></small>
+                          <small class="fa fa-star text-success"></small>
+                        </div>
+                        <p>{{item.description}}</p>
+                        <div class="d-flex justify-content-center mb-2">
+                          <a href="" class="btn btn-sm btn-success px-3" style="border-radius: 30px 0 0 30px;">Read More</a>
+                          <button href="/Payment" class="btn btn-sm btn-success px-3" (click)="navigateTo(item.name, item.price)" style="border-radius: 0 30px 30px 0;">Book Now</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+        </div>              
+
+        <div class="container-xxl py-5">
+            <div class="container">
+              <div class="booking p-5">
+                <div class="row g-5 align-items-center">
+                  <div class="col-md-6 text-white">
+                    <h6 class="text-white text-uppercase">Booking</h6>
+                    <h1 class="text-white mb-4">Online Booking</h1>
+                    <p class="mb-4">
+                      Our travel website is dedicated to making the booking process for your next adventure as simple and stress-free as possible. With our easy-to-use online booking platform, you can find and reserve the perfect hotel, flight, or vacation package with just a few clicks.
+                    </p>
+                    <p class="mb-4">
+                        At our travel website, we understand that finding the best deals on travel is key to making your dream vacation a reality. That's why our online booking portal offers exclusive deals and discounts on flights, hotels, and vacation packages from top travel providers around the world.
+          </p>
+          <a href="" class="btn btn-outline-light py-3 px-5 mt-2">Read More</a>
+        </div>
+        <div class="col-md-6">
+          <h1 class="text-white mb-4">Book A Tour</h1>
+          <form>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control bg-transparent text-white" id="name" placeholder="Your Name" />
+                  <label for="name" class="text-white">Your Name</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="email" class="form-control bg-transparent text-white" id="email" placeholder="Your Email" />
+                  <label for="email" class="text-white">Your Email</label>
+                </div>
+              </div>
+              <!-- <div class="col-md-6">
+                <div class="form-floating">
+                  <select name="" id="selectdestination" class="form-select bg-transparent text-white" [(ngModel)]="selectedDestination" (ngModelChange)="handleDestinationChange($event)">
+                    <option value="">Select a destination</option>
+                    <option value="Bali" class="text-dark">Bali</option>
+                    <option value="Maldives" class="text-dark">Maldives</option>
+                    <option value="Bangkok" class="text-dark">Bangkok</option>
+                  </select>
+                  <label for="selectdestination" class="text-white">Destination</label>
+                </div>
+              </div>
+    
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control bg-transparent text-white" id="price" placeholder="Price" [(ngModel)]="price" readonly />
+                  <label for="price" class="text-white">Price</label>
+                </div>
+              </div> -->
+
+              <!-- <div class="col-md-6">
+                <div class="form-floating">
+                    <select name="" id="selectdestination" class="form-select bg-transparent text-white" [(ngModel)]="selectedDestination" (change)="updatePrice()">
+
+                    <option value="">Select a destination</option>
+                    <option value="Bali" class="text-dark">Bali</option>
+                    <option value="Maldives" class="text-dark">Maldives</option>
+                    <option value="Bangkok" class="text-dark">Bangkok</option>
+                  </select>
+                  <label for="selectdestination" class="text-white">Destination</label>
+                </div>
+              </div>
+              
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control bg-transparent text-white" id="price" placeholder="Price" [value]="price" (ngModelChange)=" handlePriceChange($event)" readonly />
+                  <label for="price" class="text-white">Price</label>
+                </div>
+              </div> -->
+
+
+            <div class="col-md-6">
+                <div class="form-floating">
+                <select name="" id="selectdestination" class="form-select bg-transparent text-white" [(ngModel)]="selectedDestination" (change)="updatePrice()">
+                    <option value="">Select a destination</option>
+                    <option value="Bali" class="text-dark">Bali</option>
+                    <option value="Maldives" class="text-dark">Maldives</option>
+                    <option value="Bangkok" class="text-dark">Bangkok</option>
+                </select>
+                <label for="selectdestination" class="text-white">Destination</label>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-floating">
+                <input type="text" class="form-control bg-transparent text-white" id="price" placeholder="Price" [value]="price" readonly />
+                <label for="price" class="text-white">Price</label>
+                </div>
+            </div>
+              
+              
+              
+    
+              <div class="col-12">
+                <div class="form-floating">
+                  <textarea class="form-control bg-transparent text-white" placeholder="Special Request" id="message" style="height: 100px"></textarea>
+                  <label for="message" class="text-white">Special Request</label>
+                </div>
+              </div>
+    
+              <div class="col-12">
+                <button class="btn btn-outline-light w-100 py-3" type="submit" (click)="navigateTo(selectedDestination, price)">Book Now</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>    

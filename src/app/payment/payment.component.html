@@ -1,0 +1,226 @@
+<div class="payment-page">
+<div class="container mt-5">
+  <!-- card for fetching the destination package name and price -->
+  <div class="row">
+    <div class="col-md-7">
+      <div class="card bg-gray">
+        <div class="card-header">
+          <h3>Destination Details</h3>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-6 px-5">
+            <div class="form-group">
+              <input
+                type="text"
+                [placeholder]='name'
+                name="destination"
+                class="form-control"
+                disabled
+              />
+            </div>
+          </div>
+          <div class="col-md-5 mr-2">
+            <div class="form-group">
+              <input
+                type="number"
+                [placeholder]="price"
+                name="amount"
+                class="form-control"
+                disabled
+              /><br/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- form to take the payment details -->
+    <form (ngSubmit)="submitPayment(paymentForm)" #paymentForm="ngForm">
+        <div class="row">
+      <div class="col-md-7 py-4">
+        <div class="card">
+          <div class="card-header">
+            <h4>Personal Information</h4>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="firstname"
+                    placeholder="First Name"
+                    ngModel 
+                    #firstname="ngModel"
+                    class="form-control"
+                    required
+                  />
+                  <div *ngIf="firstname.touched && firstname.invalid" style="color:red">First Name is required</div>
+                </div>
+                
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="lastname"
+                    placeholder="Last Name"
+                    ngModel 
+                    #lastname="ngModel"
+                    class="form-control"
+                    required
+                  />
+                </div><br/>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="country"
+                    placeholder="Country"
+                    ngModel 
+                    #country="ngModel"
+                    class="form-control"
+                    required
+                  /><br/>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="city"
+                    placeholder="City"
+                    ngModel 
+                    #city="ngModel"
+                    class="form-control"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="zipcode"
+                    placeholder="Zip Code"
+                    ngModel 
+                    #zipcode="ngModel"
+                    class="form-control"
+                    required
+                  /><br/>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    ngModel 
+                    #email="ngModel"
+                    class="form-control"
+                    required
+                  /><br/>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <input
+                    type="string"
+                    name="phone"
+                    placeholder="Phone Number"
+                    ngModel 
+                    #phone="ngModel"
+                    class="form-control"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5 py-4">
+        <div class="card">
+          <div class="card-header">
+            <h4>Card Information</h4>
+            <p>Indicate details of the card from which money will be debited</p>
+          </div>
+          <div class="card-body">
+            <div class="row g-3">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="cardname"
+                    placeholder="Enter Card Holder Name"
+                    ngModel 
+                    #cardname="ngModel"
+                    class="form-control"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <input
+                    type="number"
+                    name="cardnumber"
+                    placeholder="Enter Card Number"
+                    ngModel 
+                    #cardnumber="ngModel"
+                    class="form-control"
+                    required
+                  />
+                  <div *ngIf="cardnumber.touched && cardnumber.invalid" style="color:red">Card Number is required</div>
+                </div>
+                
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input
+                    type="MM/YY"
+                    name="monthYear"
+                    placeholder="MM/YY"
+                    ngModel 
+                    #monthYear="ngModel"
+                    class="form-control"
+                    required
+                  />
+                  <div *ngIf="monthYear.touched && monthYear.invalid" style="color:red">Expiry is required</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input
+                    type="number"
+                    name="cvv"
+                    placeholder="CVV"
+                    ngModel 
+                    #cvv="ngModel"
+                    class="form-control"
+                    required
+                  />
+                  <div *ngIf="cvv.touched && cvv.invalid" style="color:red">cvv is required</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="row">
+        <div class="col-md-12 d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary btn-lg px-5 my-4" [disabled]="paymentForm.invalid">
+            Pay
+          </button>
+        </div>
+        <div *ngIf="isOpen" class="alert alert-success" role="alert">
+            {{successMessage}}
+            <button type="button" class="btn-close" (click)="closemessage()"></button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</div>

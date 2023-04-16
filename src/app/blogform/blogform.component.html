@@ -1,0 +1,39 @@
+<div class="container">
+    <!-- <div class="blog_images">
+      <ngb-carousel class="my-1">
+        <ng-container *ngFor="let img of ['blog_bg4.jpg', 'blog_bg3.jpg', 'blog_bg2.jpg']; let i = index">
+          <ngb-slide [id]="i">
+            <img class="bg-img-top" [src]="'/' + img" [alt]="'Slide ' + (i + 1)" />
+          </ngb-slide>
+        </ng-container>
+      </ngb-carousel>
+    </div> -->
+    <div>
+      <h1 class="text-center">Share your experience through blogging!</h1>
+      <form class="row g-3">
+        <div class="col-md-8">
+          <label class="form-label">Title</label>
+          <input type="text" class="form-control" name="title" placeholder="Enter Title" required />
+        </div>
+        <div class="col-md-8">
+          <label class="form-label">Author</label>
+          <input type="text" class="form-control" name="author" placeholder="Enter Author" required />
+        </div>
+        <div class="col-12">
+          <label for="inputMessage" class="form-label">Blog Content</label>
+          <textarea class="form-control" rows="5" name="content" placeholder="Enter Content" required></textarea>
+        </div>
+        <!-- <div class="col-12">
+          <label for="image" class="form-label">Image:</label>
+          <input type="file" id="image" name="image" accept="image/*" (change)="handleChange($event)" />
+        </div> -->
+        <div class="col-12">
+          <button class="button bg-success" type="submit">Post Blog!</button>
+        </div>
+        <div class="col-12">
+          <br />
+        </div>
+      </form>
+    </div>
+  </div>
+  

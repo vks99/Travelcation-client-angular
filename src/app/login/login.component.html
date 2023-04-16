@@ -1,0 +1,16 @@
+<div class="col-md-8 form-right-side p-5">
+  <h1 class="mb-4" style="margin-top:80px;">LOG IN</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="col-md-6">
+      <label for="email" class="form-label">Email</label>
+      <input type="text" formControlName="email" class="form-control" placeholder="email" required>
+    </div>
+    <div class="col-md-6">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" formControlName="password" class="form-control" required>
+    </div>
+    <div class="col-12">
+      <button type="submit" class="button">login</button>
+    </div>
+  </form>
+</div>
