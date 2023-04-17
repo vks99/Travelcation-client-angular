@@ -18,6 +18,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { DestinationComponent } from './destination/destination.component';
 import { HomeComponent } from './home/home.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { BlogsComponent } from './blogs/blogs.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     BlogformComponent,
     LogoutComponent,
     DestinationComponent,
-    HomeComponent
+    HomeComponent,
+    BlogsComponent
   ],
   imports: [
     BrowserModule,
