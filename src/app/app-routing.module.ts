@@ -15,15 +15,15 @@ import { BlogsComponent } from './blogs/blogs.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  { path: 'contactus', component: ContactusComponent },
-  { path: 'Payment', component: PaymentComponent },
+  { path: 'contactus', component: ContactusComponent, canActivate: [AuthGuard] },
+  { path: 'Payment', component: PaymentComponent, canActivate: [AuthGuard] },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'history', component: HistoryComponent },
-  { path: 'Blogs', component: BlogsComponent },
-  { path: 'BlogForm', component: BlogformComponent },
-  { path: 'logout', component: LogoutComponent },
-  { path: 'destination', component: DestinationComponent }
+  { path: 'history', component: HistoryComponent, canActivate: [AuthGuard] },
+  { path: 'Blogs', component: BlogsComponent, canActivate: [AuthGuard] },
+  { path: 'BlogForm', component: BlogformComponent, canActivate: [AuthGuard] },
+  { path: 'logout', component: LogoutComponent, canActivate: [AuthGuard] },
+  { path: 'destination', component: DestinationComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
