@@ -8,9 +8,11 @@ import { LogoutComponent } from './logout/logout.component';
 import { HistoryComponent } from './history/history.component';
 import { BlogformComponent } from './blogform/blogform.component';
 import { DestinationComponent } from './destination/destination.component';
+import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
+  {path: 'home', component: HomeComponent},
   { path: 'contactus', component: ContactusComponent },
   { path: 'Payment', component: PaymentComponent },
   { path: 'signup', component: SignupComponent },

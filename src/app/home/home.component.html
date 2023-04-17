@@ -1,0 +1,84 @@
+<div class="scroll-images">
+    <carousel>
+        <slide id="image-top">
+          <img src="assets/Home/background_image_fort3.jpeg" alt="Slide 1" />
+          <div class="carousel-caption">  
+            <h1 *ngIf="!isLoggedIn">Welcome!</h1> 
+            <div *ngIf="!isLoggedIn">
+              <a routerLink="/login" class="btn btn-primary">Log in</a>&nbsp;
+              <a routerLink="/signup" class="btn btn-primary">Sign up</a>
+            </div>
+          </div>
+        </slide>
+        <slide id="image-top">
+          <img src="assets/Home/background_image_city.jpeg" alt="Slide 2"  />
+          <div class="carousel-caption">
+            <h3>Travel To Explore</h3>
+            <p>All journeys are different, just find what makes it unique!</p>
+          </div>
+        </slide >
+        <slide id="image-top">
+          <img src="assets/Home/background_image_fort.jpeg" alt="Slide 3" />
+          <div class="carousel-caption">
+            <h3>Adventure</h3>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          </div>
+        </slide>
+      </carousel>
+    </div>
+    
+      <div class="container my-3">
+        <div class="row">
+            <h2 class="text-center mb-2">Popular Destinations</h2>
+          <div *ngFor="let item of destinations; let i = index" class="col-md-4">
+            <div class="card">
+              <img [src]="destinationImages[i].imgurl" class="card-img-top" alt="Card Image" />
+              <div class="card-body">
+                <h3 class="card-title">{{ item.name }}</h3>
+                <p class="card-text">{{ item.description }}</p>
+                <div class="btn mb-2">
+                  <a href="/Destination" class="btn btn-primary">View More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="row mx-5 mb-5 g-3">
+        <h2 class="text-center mb-2">Travel Guides</h2>
+        <div class="col-md-6 col-lg-3" *ngFor="let item of travelGuides; let i = index">
+          <div class="card">
+            <img class="rounded-circle card-image-travelguide" alt="image-travelguide" [src]="travelGuideImages[i].guideimageUrl"/>
+            <div class="card-text-travelguide d-flex justify-content-center">
+              <h4>{{ item.name }}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 class="d-flex justify-content-center">
+            If you are a savvy traveler, there is nothing better than sharing
+            your personal experience.
+        </h3>
+      </div>
+      <div *ngIf="isFormOpen" id="feedback-container" class="mb-3">
+        <form [formGroup]="feedbackForm1" (ngSubmit)="submitFeedback1()">
+           Name: <input type="text" id="name" formControlName="name"><br/>
+           Email: <input type="email" id="email" formControlName="email"><br/><br/>
+           Feedback: <textarea id="feedback" formControlName="feedback"></textarea><br/>
+           
+           <button type="submit" [disabled]="feedbackForm1.invalid" class="bg-success">Submit</button>&nbsp;&nbsp;
+           <button type="button" (click)="closeForm()" class="bg-danger">Close</button>
+           <div *ngIf="successMessage" class="alert alert-success" role="alert">
+            {{successMessage}}
+            <button type="button" class="btn-close" (click)="closeMessage()"></button>
+            </div>
+        </form>
+       
+    </div>
+    <div *ngIf="!isFormOpen" id="feedback-container" class="mb-3">
+        <button *ngIf="!isFormOpen" (click)="openForm()" class="bg-primary">Provide Feedback</button>
+    </div>
+      
+    

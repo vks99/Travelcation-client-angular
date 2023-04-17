@@ -16,6 +16,8 @@ import { BlogformComponent } from './blogform/blogform.component';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { LogoutComponent } from './logout/logout.component';
 import { DestinationComponent } from './destination/destination.component';
+import { HomeComponent } from './home/home.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { DestinationComponent } from './destination/destination.component';
     HistoryComponent,
     BlogformComponent,
     LogoutComponent,
-    DestinationComponent
+    DestinationComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { DestinationComponent } from './destination/destination.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgbCarouselModule
+    NgbCarouselModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
