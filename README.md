@@ -10,6 +10,11 @@ To provide the best travel experience for all the travel enthusiasts by providin
 * Customer can view the blogs of different destinations and they also post their own blogs.
 * For any issues and enquiries customer can contact through the website.
 
+## Technologies Used:
+* Front – End: HTML, CSS, React JS, Bootstrap
+* Back – End: Node.js, Mongo DB
+
+
 ## Project Features:
 *	Home 
 *	Login/Sign Up
