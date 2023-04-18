@@ -11,7 +11,7 @@ To provide the best travel experience for all the travel enthusiasts by providin
 * For any issues and enquiries customer can contact through the website.
 
 ## Technologies Used:
-* Front – End: HTML, CSS, React JS, Bootstrap
+* Front – End: HTML, CSS, Angular, Bootstrap
 * Back – End: Node.js, Mongo DB
 
 
